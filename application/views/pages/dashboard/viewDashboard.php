@@ -41,7 +41,7 @@
             <div class="inner">
               <h5>Kartu keluarga</h5>
 
-              <h4 class="font-weight-bold">949</h4>
+              <h4 class="font-weight-bold"><?= $dataPenduduk; ?></h4>
             </div>
             <!-- <div class="icon">
               <i class="ion ion-stats-bars"></i>

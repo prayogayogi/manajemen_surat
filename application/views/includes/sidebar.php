@@ -4,7 +4,7 @@
   <!-- Sidebar -->
   <div class="sidebar">
     <!-- Sidebar user panel (optional) -->
-    <div class="user-panel mt-3 pb-3 mb-5 d-flex">
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
       <div class="image">
         <img src="<?= base_url('assets') ?>/dist/img/default.jpg" class="img-circle elevation-2" alt="User Image">
       </div>
@@ -34,7 +34,7 @@
         </li>
         <li class="nav-item has-treeview">
           <a href="<?= base_url('DataKkController') ?>" class="nav-link">
-            <i class="nav-icon fas fa-file-alt"></i>
+            <i class="nav-icon fas fa-book-medical"></i>
             <p>
               Data Kartu Keluarga
             </p>
@@ -98,6 +98,24 @@
             </li>
           </ul>
         </li> -->
+        <li class="nav-header">Administrator</li>
+        <li class="nav-item">
+          <a href="<?= base_url('AdministratorController') ?>" class="nav-link">
+            <i class="nav-icon fas fa-user-cog"></i>
+            <p>
+              Master Admin
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="<?= base_url('AdministratorController/admin') ?>" class="nav-link">
+            <i class=" nav-icon fas fa-users-cog"></i>
+            <p>
+              Admin
+            </p>
+          </a>
+        </li>
+
         <li class="nav-header">Action</li>
         <li class="nav-item">
           <a href="<?= base_url('AuthController/logout') ?>" onclick="return confirm('Apakah Anda Inggin Keluar.??')" class="nav-link">

@@ -40,19 +40,17 @@
                             <th>Nama</th>
                             <th>Alamat</th>
                             <th>Nik</th>
-                            <th>Status</th>
+                            <th>Ekonomi</th>
                             <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <?php
-                          $no = 1;
-                          foreach ($penduduk as $data) : ?>
+                          <?php foreach ($penduduk as $data) : ?>
                             <tr>
                               <td><?= $no++ ?></td>
                               <td><?= $data['nama']; ?></td>
                               <td><?= $data['alamat']; ?></td>
-                              <td><?= $data['nik']; ?></td>
+                              <td><?= $data['no_nik']; ?></td>
                               <td><?= $data['status']; ?></td>
                               <td>
                                 <a href="#" data-toggle="modal" data-target="#modalUbahDataPenduduk<?= $data['id'] ?>" class="btn btn-primary"><i class="fas fa-pen-square"></i></a>
@@ -96,30 +94,34 @@
               <div class="row">
                 <div class="col">
                   <div class="form-group">
+                    <label for="no_kk">No Kk</label>
+                    <input type="number" name="no_kk" class="form-control" id="no_kk" placeholder="Masukan No Kk" autofocus>
+                  </div>
+                  <div class="form-group">
+                    <label for="no_nik">No Nik</label>
+                    <input type="number" name="no_nik" class="form-control" id="no_nik" placeholder="Masukan No Nik">
+                  </div>
+                  <div class="form-group">
                     <label for="nama">Nama</label>
-                    <input type="text" name="nama" class="form-control" id="nama" placeholder="Masukan Nama" autofocus>
+                    <input type="text" name="nama" class="form-control" id="nama" placeholder="Masukan Nama">
                   </div>
                   <div class="form-group">
-                    <label for="alamat">Alamat</label>
-                    <input type="text" name="alamat" class="form-control" id="alamat" placeholder="Masukan Alamat">
+                    <label for="tempat_tgl">Tempat Tgl Lahir</label>
+                    <input type="text" name="tempat_tgl" class="form-control" id="tempat_tgl" placeholder="Masukan Tempat Tgl Lahir">
                   </div>
+                </div>
+                <div class="col">
                   <div class="form-group">
-                    <label for="nama_desa">Nama Desa</label>
-                    <input type="text" name="nama_desa" class="form-control" id="nama_desa" placeholder="Masukan Nama Desa">
+                    <label for="tgl_lahir">Tgl Lahir</label>
+                    <input type="date" name="tgl_lahir" class="form-control" id="tgl_lahir" placeholder="Masukan Tgl Lahir">
                   </div>
                   <div class="form-group">
                     <label for="jenis_kelamin">Jenis Kelamin</label>
                     <input type="text" name="jenis_kelamin" class="form-control" id="jenis_kelamin" placeholder="Masukan Jenis Kelamin">
                   </div>
-                </div>
-                <div class="col">
                   <div class="form-group">
-                    <label for="nik">Nik</label>
-                    <input type="text" name="nik" class="form-control" id="nik" placeholder="Masukan Nik">
-                  </div>
-                  <div class="form-group">
-                    <label for="no_kk">No Kk</label>
-                    <input type="text" name="no_kk" class="form-control" id="no_kk" placeholder="Masukan No Kk">
+                    <label for="alamat">Alamat</label>
+                    <input type="text" name="alamat" class="form-control" id="alamat" placeholder="Masukan Alamat">
                   </div>
                   <div class="form-group">
                     <label for="pekerjaan">Pekerjaan</label>
@@ -128,6 +130,9 @@
                 </div>
               </div>
               <button type="submit" class="btn btn-primary mt-2">Simpan</button>
+
+              <button type="resset" class="btn btn-dark px-3 ml-2 mt-2" data-dismiss="modal">Close</button>
+
             </form>
           </div>
         </div>
@@ -159,36 +164,34 @@
                     </div>
                     <div class="form-group">
                       <label for="alamat">Alamat</label>
-                      <input type="text" name="alamat" class="form-control" id="alamat" value="<?= $data['alamat'] ?>">
-                    </div>
-                    <div class="form-group">
-                      <label for="nama_desa">Nama Desa</label>
-                      <input type="text" name="nama_desa" class="form-control" id="nama_desa" value="<?= $data['nama_desa'] ?>">
+                      <input type="text" name="alamat" autocomplete="off" class="form-control" id="alamat" value="<?= $data['alamat'] ?>">
                     </div>
                     <div class="form-group">
                       <label for="jenis_kelamin">Jenis Kelamin</label>
                       <input type="text" name="jenis_kelamin" class="form-control" id="jenis_kelamin" disabled value="<?= $data['jenis_kelamin'] ?>">
                     </div>
+                    <div class="form-group">
+                      <label for="tgl_lahir">Tanggal Lahir</label>
+                      <input type="date" name="tgl_lahir" class="form-control" id="tgl_lahir" value="<?= $data['tgl_lahir'] ?>">
+                    </div>
                   </div>
                   <div class="col">
                     <div class="form-group">
-                      <label for="nik">Nik</label>
-                      <input type="text" name="nik" class="form-control" id="nik" value="<?= $data['nik'] ?>">
+                      <label for="no_nik">Nik</label>
+                      <input type="number" name="no_nik" autocomplete="off" class="form-control" id="no_nik" value="<?= $data['no_nik'] ?>">
                     </div>
                     <div class="form-group">
                       <label for="no_kk">No Kk</label>
-                      <input type="text" name="no_kk" class="form-control" id="no_kk" value="<?= $data['no_kk'] ?>">
+                      <input type="number" name="no_kk" autocomplete="off" class="form-control" id="no_kk" value="<?= $data['no_kk'] ?>">
                     </div>
                     <div class="form-group">
                       <label for="pekerjaan">Pekerjaan</label>
-                      <input type="text" name="pekerjaan" class="form-control" id="pekerjaan" value="<?= $data['pekerjaan'] ?>">
+                      <input type="text" name="pekerjaan" autocomplete="off" class="form-control" id="pekerjaan" value="<?= $data['pekerjaan'] ?>">
                     </div>
                   </div>
                 </div>
                 <button type="submit" class="btn btn-primary mt-2">Simpan</button>
-                <div class="modal-footer">
-                  <button type="resset" class="btn btn-dark" data-dismiss="modal">Close</button>
-                </div>
+                <button type="resset" class="btn px-3 ml-2 mt-2 btn-dark" data-dismiss="modal">Close</button>
               </form>
             </div>
           </div>
@@ -223,13 +226,13 @@
               <dt class="col-sm-6">Alamat</dt>
               <dd class="col-sm-6">: <?= $data['alamat']; ?></dd>
               <dt class="col-sm-6">Nama Desa</dt>
-              <dd class="col-sm-6">: <?= $data['nama_desa']; ?></dd>
+              <dd class="col-sm-6">: <?= $data['alamat']; ?></dd>
               <dt class="col-sm-6">Jenis Kelamin</dt>
               <dd class="col-sm-6">: <?= $data['jenis_kelamin']; ?></dd>
               <dt class="col-sm-6">No Nik</dt>
-              <dd class="col-sm-6">: <?= $data['nik']; ?></dd>
+              <dd class="col-sm-6">: <?= $data['no_nik']; ?></dd>
               <dt class="col-sm-6">No Kk</dt>
-              <dd class="col-sm-6">: <?= $data['alamat']; ?></dd>
+              <dd class="col-sm-6">: <?= $data['no_kk']; ?></dd>
               <dt class="col-sm-6">Pekerjaan</dt>
               <dd class="col-sm-6">: <?= $data['pekerjaan']; ?></dd>
               <dt class="col-sm-6">Data Masuk</dt>
@@ -238,7 +241,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn px-3 ml-2 btn-dark" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>

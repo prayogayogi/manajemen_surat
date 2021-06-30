@@ -24,8 +24,8 @@ class AuthController extends CI_Controller
     $this->form_validation->set_rules('password', 'Password', 'required|trim', ['required' => 'Password Harus Diisi']);
     if ($this->form_validation->run() == FALSE) {
       $data['title'] = "Form Login";
-      $this->load->view('templateRegister/login', $data);
-      $this->load->view('registerasi/login');
+      $this->load->view('includes/auth/login', $data);
+      $this->load->view('pages/registerasi/login');
     } else {
       $email = $this->input->post('email');
       $password = $this->input->post('password');
@@ -46,7 +46,7 @@ class AuthController extends CI_Controller
           redirect('DashboardController');
         } else {
           $this->session->set_flashdata('status', '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-          <strong>No.!!</strong>Password Kamu Salah.
+          <strong></strong>Password Kamu Salah.
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>

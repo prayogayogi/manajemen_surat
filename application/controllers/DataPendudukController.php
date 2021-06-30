@@ -14,6 +14,7 @@ class DataPendudukController extends CI_Controller
   public function index()
   {
     $data['title'] = 'Data Penduduk';
+    $data['no'] = 1;
     $data['userLogin'] = $this->authModel->getUserLogin()->row_array();
     $data['penduduk'] = $this->pendudukModel->join()->result_array();
     $this->load->view('includes/header', $data);
@@ -40,7 +41,7 @@ class DataPendudukController extends CI_Controller
   public function hapusDataPenduduk($id)
   {
     $this->db->where('id', $id);
-    $this->db->delete('datapenduduk');
+    $this->db->delete('data_penduduk');
     $this->session->set_flashdata('status', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
     <strong>Data</strong> Berhasil Dihapus.
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -60,7 +61,7 @@ class DataPendudukController extends CI_Controller
       <span aria-hidden="true">&times;</span>
     </button>
   </div>');
-    redirect('DashboardController/dataPenduduk');
+    redirect('DataPendudukController');
   }
 
 

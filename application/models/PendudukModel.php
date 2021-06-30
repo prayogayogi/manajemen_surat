@@ -3,26 +3,41 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class PendudukModel extends CI_Model
 {
-  // Untuk mengambil data penduduk
-  function getPenduduk()
+  // Untuk mengambil jumlah data penduduk
+  function getDataPenduduk()
   {
-    return $this->db->get('datapenduduk');
+    return $this->db->get('data_penduduk');
   }
+
+  // Untuk mengambil jumlah data laki-laki
+  function getDataLakilaki()
+  {
+    return $this->db->get_where('data_penduduk', ['jenis_kelamin' => 'LAKI-LAKI']);
+  }
+
+  // Untuk mengambil jumlah data laki-laki
+  function getDataPerempuan()
+  {
+    return $this->db->get_where('data_penduduk', ['jenis_kelamin' => 'PEREMPUAN']);
+  }
+
 
   // Store data penduduk
   function storePenduduk()
   {
+
     $data = [
-      'nama' => $this->input->post('nama'),
-      'alamat' => $this->input->post('alamat'),
-      'nama_desa' => $this->input->post('nama_desa'),
-      'jenis_kelamin' => $this->input->post('jenis_kelamin'),
-      'nik' => $this->input->post('nik'),
       'no_kk' => $this->input->post('no_kk'),
+      'no_nik' => $this->input->post('no_nik'),
+      'nama' => $this->input->post('nama'),
+      'tempat_tgl' => $this->input->post('tempat_tgl'),
+      'tgl_lahir' => $this->input->post('tgl_lahir'),
+      'jenis_kelamin' => $this->input->post('jenis_kelamin'),
+      'alamat' => $this->input->post('alamat'),
       'pekerjaan' => $this->input->post('pekerjaan'),
       'tgl_masuk' => date('d-m-Y')
     ];
-    $this->db->insert('datapenduduk', $data);
+    $this->db->insert('data_penduduk', $data);
   }
 
 
@@ -30,16 +45,14 @@ class PendudukModel extends CI_Model
   function update($id)
   {
     $data = [
-      'nama' => $this->input->post('alamat'),
-      'alamat' => $this->input->post('nama_desa'),
-      'nik' => $this->input->post('nik'),
-      'nik' => $this->input->post('no_kk'),
-      'nik' => $this->input->post('pekerjaan')
+      'alamat' => $this->input->post('alamat'),
+      'tgl_lahir' => $this->input->post('tgl_lahir'),
+      'no_nik' => $this->input->post('no_nik'),
+      'no_kk' => $this->input->post('no_kk'),
+      'pekerjaan' => $this->input->post('pekerjaan')
     ];
-    var_dump($data);
-    die;
     $this->db->where('id', $id);
-    $this->db->update('datapenduduk', $data);
+    $this->db->update('data_penduduk', $data);
   }
 
   // get data detail
@@ -55,7 +68,7 @@ class PendudukModel extends CI_Model
   {
     $this->db->select('*');
     $this->db->from('status');
-    $this->db->join('datapenduduk', 'datapenduduk.pekerjaan = status.pekerjaan');
+    $this->db->join('data_penduduk', 'data_penduduk.pekerjaan = status.pekerjaan');
     return $this->db->get();
     // $this->join('status', 'status.pekerjaan=datapenduduk.pekerjaan');
     // return $this->db->get('datapenduduk');

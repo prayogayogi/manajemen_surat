@@ -38,7 +38,6 @@
                           <tr>
                             <th>No</th>
                             <th>Nama</th>
-                            <th>Email</th>
                             <th>Alamat</th>
                             <th>Foto</th>
                             <th>Action</th>
@@ -49,7 +48,6 @@
                             <tr>
                               <td><?= $no++ ?></td>
                               <td><?= $data['nama']; ?></td>
-                              <td><?= $data['email']; ?></td>
                               <td><?= $data['alamat']; ?></td>
                               <td>
                                 <img src="<?= base_url('/assets/assetGambar/administrator/') . $data['foto'] ?>" alt="administrator" width="40px">

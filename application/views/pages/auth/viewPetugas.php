@@ -45,7 +45,7 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <?php foreach ($getAdminstrator as $data) : ?>
+                          <?php foreach ($getPetugas as $data) : ?>
                             <tr>
                               <td><?= $no++ ?></td>
                               <td><?= $data['nama']; ?></td>

@@ -6,7 +6,7 @@
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
       <div class="image">
-        <img src="<?= base_url('assets') ?>/dist/img/default.jpg" class="img-circle elevation-2" alt="User Image">
+        <img src="<?= base_url('/assets/assetGambar/administrator/') . $userLogin['foto'] ?>" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
         <a href="#" class="d-block text-uppercase"><?= $userLogin['nama']; ?></a>
@@ -75,35 +75,20 @@
             </li>
           </ul>
         </li>
-        <!-- <li class="nav-item has-treeview menu-open">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-folder"></i>
-            <p>
-              Laporan
-              <i class="right fas fa-angle-left"></i>
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="./index.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Laporan Pertanggal</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="./index2.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Laporan Perpriode</p>
-              </a>
-            </li>
-          </ul>
-        </li> -->
         <li class="nav-header">Administrator</li>
         <li class="nav-item">
           <a href="<?= base_url('AdministratorController') ?>" class="nav-link">
             <i class="nav-icon fas fa-user-cog"></i>
             <p>
-              Master Admin
+              Administrator
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="<?= base_url('AdministratorController/camat') ?>" class="nav-link">
+            <i class=" nav-icon fas fa-users-cog"></i>
+            <p>
+              Camat
             </p>
           </a>
         </li>
@@ -111,7 +96,7 @@
           <a href="<?= base_url('AdministratorController/admin') ?>" class="nav-link">
             <i class=" nav-icon fas fa-users-cog"></i>
             <p>
-              Admin
+              Petugas
             </p>
           </a>
         </li>

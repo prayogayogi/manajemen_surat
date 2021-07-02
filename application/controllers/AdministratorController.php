@@ -13,22 +13,22 @@ class AdministratorController extends CI_Controller
   // get data Administrator
   public function index()
   {
-    $data['title'] = "Adminstrator";
+    $data['title'] = "Admin";
     $data['no'] = 1;
     $data['userLogin'] = $this->authModel->getUserLogin()->row_array();
-    $data['getAdminstrator'] = $this->authModel->getAdminstrator()->result_array();
+    $data['getAdmin'] = $this->authModel->getAdminstrator()->result_array();
     $this->load->view('includes/header', $data);
     $this->load->view('includes/sidebar', $data);
-    $this->load->view('pages/auth/viewAdministrator', $data);
+    $this->load->view('pages/auth/viewAdmin', $data);
     $this->load->view('includes/footer');
   }
 
-  // Tambah Data Administrator
-  public function tambahDataAdministrator()
+  // Tambah Data Admin
+  public function tambahDataAdmin()
   {
-    $this->UserAppModel->tambahDataAdministrator();
+    $this->UserAppModel->tambahDataAdmin();
     $this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-    <strong>Data Administrator</strong> Berhasil Di Tambah.
+    <strong>Data Admin</strong> Berhasil Di Tambah.
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -36,16 +36,16 @@ class AdministratorController extends CI_Controller
     redirect('AdministratorController');
   }
 
-  // get data Admini
+  // get data camat
   public function admin()
   {
-    $data['title'] = "Admin";
+    $data['title'] = "Camat";
     $data['no'] = 1;
     $data['userLogin'] = $this->authModel->getUserLogin()->row_array();
-    $data['getAdminstrator'] = $this->authModel->getAdmin()->result_array();
+    $data['getCamat'] = $this->authModel->getAdmin()->result_array();
     $this->load->view('includes/header', $data);
     $this->load->view('includes/sidebar', $data);
-    $this->load->view('pages/auth/viewAdmin', $data);
+    $this->load->view('pages/auth/viewCamat', $data);
     $this->load->view('includes/footer');
   }
 }

@@ -2,7 +2,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 class UserAppModel extends CI_Model
 {
-  public function tambahDataAdministrator()
+  public function tambahDataAdmin()
   {
     $file = $_FILES['foto'];
     if ($file) {
@@ -19,12 +19,12 @@ class UserAppModel extends CI_Model
     }
 
     $data = [
-      'nama' => $this->input->post('nama', true),
-      'email' => $this->input->post('email', true),
-      'alamat' => $this->input->post('alamat', true),
+      'nama' => $this->input->post('nama'),
+      'email' => $this->input->post('email'),
+      'alamat' => $this->input->post('alamat'),
       'foto' => $files,
-      'roles' => 1,
-      'password' => password_hash($this->input->post('nama', true), PASSWORD_DEFAULT)
+      'roles' => $this->input->post('roles'),
+      'password' => password_hash(('admin'), PASSWORD_DEFAULT)
     ];
     $this->db->insert('userapp', $data);
   }

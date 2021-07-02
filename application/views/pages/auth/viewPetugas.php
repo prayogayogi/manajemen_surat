@@ -3,12 +3,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Data Admin</h1>
+          <h1 class="m-0 text-dark">Data Petugas</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="<?= base_url('DashboardController') ?>">Home</a></li>
-            <li class="breadcrumb-item active">Data Admin</li>
+            <li class="breadcrumb-item active">Data Petugas</li>
           </ol>
         </div>
       </div>
@@ -20,7 +20,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Table Data Admin</h3>
+              <h3 class="card-title">Table Data Petugas</h3>
               <div class="status mt-5">
                 <?= $this->session->flashdata('status'); ?>
               </div>
@@ -45,7 +45,7 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <?php foreach ($getAdmin as $data) : ?>
+                          <?php foreach ($getAdminstrator as $data) : ?>
                             <tr>
                               <td><?= $no++ ?></td>
                               <td><?= $data['nama']; ?></td>
@@ -79,12 +79,12 @@
 </div>
 
 
-<!-- Modal untuk tambah data admin -->
-<div class="modal fade" id="exampleModalDataPenduduk" tabindex="-1" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- Modal untuk tambah data penduduk -->
+<!-- <div class="modal fade" id="exampleModalDataPenduduk" tabindex="-1" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Tambah Data Admin</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Tambah Data penduduk</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -92,48 +92,59 @@
       <div class="modal-body">
         <div class="row">
           <div class="col">
-            <?= form_open_multipart('AdministratorController/tambahDataAdmin'); ?>
-            <div class="row">
-              <div class="col">
-                <div class="form-group">
-                  <label for="nama">Nama</label>
-                  <input type="text" name="nama" class="form-control" autocomplete="off" id="nama" placeholder="Masukan Nama" autofocus>
+            <form action="<?= base_url('DataPendudukController/tambahDataPenduduk') ?>" method="POST">
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="no_kk">No Kk</label>
+                    <input type="number" name="no_kk" class="form-control" id="no_kk" placeholder="Masukan No Kk" autofocus>
+                  </div>
+                  <div class="form-group">
+                    <label for="no_nik">No Nik</label>
+                    <input type="number" name="no_nik" class="form-control" id="no_nik" placeholder="Masukan No Nik">
+                  </div>
+                  <div class="form-group">
+                    <label for="nama">Nama</label>
+                    <input type="text" name="nama" class="form-control" id="nama" placeholder="Masukan Nama">
+                  </div>
+                  <div class="form-group">
+                    <label for="tempat_tgl">Tempat Tgl Lahir</label>
+                    <input type="text" name="tempat_tgl" class="form-control" id="tempat_tgl" placeholder="Masukan Tempat Tgl Lahir">
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="text" name="email" class="form-control" id="email" placeholder="Masukan Email">
-                </div>
-                <div class="form-group">
-                  <label for="alamat">Alamat</label>
-                  <input type="text" name="alamat" class="form-control" id="alamat" placeholder="Masukan Alamat">
-                </div>
-                <div class="form-group">
-                  <label for="jabatan">Jabatan</label>
-                  <select class="form-control" name="roles">
-                    <option value="1">-- Pilih Posisi Jabatan --</option>
-                    <option value="1">Admin</option>
-                    <option value="2">Camat</option>
-                    <option value="3">Petugas Desa</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="foto">Photo</label>
-                  <input type="file" name="foto" class="form-control" id="foto" placeholder="Masukan Tempat Tgl Lahir">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="tgl_lahir">Tgl Lahir</label>
+                    <input type="date" name="tgl_lahir" class="form-control" id="tgl_lahir" placeholder="Masukan Tgl Lahir">
+                  </div>
+                  <div class="form-group">
+                    <label for="jenis_kelamin">Jenis Kelamin</label>
+                    <input type="text" name="jenis_kelamin" class="form-control" id="jenis_kelamin" placeholder="Masukan Jenis Kelamin">
+                  </div>
+                  <div class="form-group">
+                    <label for="alamat">Alamat</label>
+                    <input type="text" name="alamat" class="form-control" id="alamat" placeholder="Masukan Alamat">
+                  </div>
+                  <div class="form-group">
+                    <label for="pekerjaan">Pekerjaan</label>
+                    <input type="text" name="pekerjaan" class="form-control" id="pekerjaan" placeholder="Masukan Pekerjaan">
+                  </div>
                 </div>
               </div>
-            </div>
-            <button type="submit" class="btn btn-primary mt-2">Simpan</button>
-            <button type="resset" class="btn btn-dark px-3 ml-2 mt-2" data-dismiss="modal">Close</button>
-            <?= form_close(); ?>
+              <button type="submit" class="btn btn-primary mt-2">Simpan</button>
+
+              <button type="resset" class="btn btn-dark px-3 ml-2 mt-2" data-dismiss="modal">Close</button>
+
+            </form>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- Modal Untuk ubah data penduduk -->
-<!-- <?php foreach ($getAdmin as $data) : ?>
+<!-- <?php foreach ($penduduk as $data) : ?>
   <div class="modal fade" id="modalUbahDataPenduduk<?= $data['id'] ?>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -194,12 +205,12 @@
 
 
 <!-- Modal Unutk Detail data Penduduk -->
-<?php foreach ($getAdmin as $data) : ?>
+<!-- <?php foreach ($penduduk as $data) : ?>
   <div class="modal fade" id="staticBackdrop<?= $data['id'] ?>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Detail Data Admin</h5>
+          <h5 class="modal-title" id="staticBackdropLabel">Detail Data Penduduk</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -208,26 +219,26 @@
           <div class="card-body">
             <div class="row">
               <div class="col text-center mb-4">
-                <img src="<?= base_url('/assets/assetGambar/administrator/') . $data['foto'] ?>" width="120px" alt="" class="img-thumbnail">
+                <img src="<?= base_url('assets') ?>/dist/img/default.jpg" width="120px" alt="">
               </div>
             </div>
             <dl class="row justify-content-center">
               <dt class="col-sm-6">Nama</dt>
               <dd class="col-sm-6">: <?= $data['nama']; ?></dd>
-              <dt class="col-sm-6">Email</dt>
-              <dd class="col-sm-6">: <?= $data['email']; ?></dd>
+              <dt class="col-sm-6">Alamat</dt>
+              <dd class="col-sm-6">: <?= $data['alamat']; ?></dd>
               <dt class="col-sm-6">Nama Desa</dt>
               <dd class="col-sm-6">: <?= $data['alamat']; ?></dd>
-              <dt class="col-sm-6">Jabatan</dt>
-              <dd class="col-sm-6">:
-                <?php if ($data['roles'] == 1) {
-                  print "Admin";
-                } else if ($data['roles'] == 2) {
-                  print "Camat";
-                } else if ($data['roles'] == 3) {
-                  print "Petugas";
-                } ?>
-              </dd>
+              <dt class="col-sm-6">Jenis Kelamin</dt>
+              <dd class="col-sm-6">: <?= $data['jenis_kelamin']; ?></dd>
+              <dt class="col-sm-6">No Nik</dt>
+              <dd class="col-sm-6">: <?= $data['no_nik']; ?></dd>
+              <dt class="col-sm-6">No Kk</dt>
+              <dd class="col-sm-6">: <?= $data['no_kk']; ?></dd>
+              <dt class="col-sm-6">Pekerjaan</dt>
+              <dd class="col-sm-6">: <?= $data['pekerjaan']; ?></dd>
+              <dt class="col-sm-6">Data Masuk</dt>
+              <dd class="col-sm-6">: <?= $data['tgl_masuk']; ?></dd>
             </dl>
           </div>
         </div>
@@ -237,4 +248,4 @@
       </div>
     </div>
   </div>
-<?php endforeach; ?>
+<?php endforeach; ?> -->

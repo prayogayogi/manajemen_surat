@@ -36,6 +36,7 @@ class AdministratorController extends CI_Controller
     redirect('AdministratorController');
   }
 
+  // DATA CAMAT
   // get data camat
   public function camat()
   {

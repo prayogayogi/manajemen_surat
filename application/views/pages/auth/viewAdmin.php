@@ -131,7 +131,7 @@
 </div>
 
 <!-- Modal Untuk ubah data penduduk -->
-<!-- <?php foreach ($getAdmin as $data) : ?>
+<?php foreach ($getAdmin as $data) : ?>
   <div class="modal fade" id="modalUbahDataPenduduk<?= $data['id'] ?>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -152,30 +152,12 @@
                       <input type="text" name="nama" class="form-control" id="nama" disabled value="<?= $data['nama'] ?>" autofocus>
                     </div>
                     <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="text" name="email" autocomplete="off" class="form-control" id="email" value="<?= $data['email'] ?>">
+                    </div>
+                    <div class="form-group">
                       <label for="alamat">Alamat</label>
                       <input type="text" name="alamat" autocomplete="off" class="form-control" id="alamat" value="<?= $data['alamat'] ?>">
-                    </div>
-                    <div class="form-group">
-                      <label for="jenis_kelamin">Jenis Kelamin</label>
-                      <input type="text" name="jenis_kelamin" class="form-control" id="jenis_kelamin" disabled value="<?= $data['jenis_kelamin'] ?>">
-                    </div>
-                    <div class="form-group">
-                      <label for="tgl_lahir">Tanggal Lahir</label>
-                      <input type="date" name="tgl_lahir" class="form-control" id="tgl_lahir" value="<?= $data['tgl_lahir'] ?>">
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="form-group">
-                      <label for="no_nik">Nik</label>
-                      <input type="number" name="no_nik" autocomplete="off" class="form-control" id="no_nik" value="<?= $data['no_nik'] ?>">
-                    </div>
-                    <div class="form-group">
-                      <label for="no_kk">No Kk</label>
-                      <input type="number" name="no_kk" autocomplete="off" class="form-control" id="no_kk" value="<?= $data['no_kk'] ?>">
-                    </div>
-                    <div class="form-group">
-                      <label for="pekerjaan">Pekerjaan</label>
-                      <input type="text" name="pekerjaan" autocomplete="off" class="form-control" id="pekerjaan" value="<?= $data['pekerjaan'] ?>">
                     </div>
                   </div>
                 </div>
@@ -188,7 +170,7 @@
       </div>
     </div>
   </div>
-<?php endforeach; ?> -->
+<?php endforeach; ?>
 
 
 <!-- Modal Unutk Detail data Penduduk -->

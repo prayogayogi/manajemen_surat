@@ -11,7 +11,7 @@ class AuthModel extends CI_Model
   // untuk mengambil data admin dengan Roles [1]
   function getAdmin()
   {
-    return $this->db->get_where('userapp', ['roles' => 1]);
+    return $this->db->get('userapp');
   }
 
   // untuk mengambil data camat dengan Roles [2]
@@ -24,5 +24,14 @@ class AuthModel extends CI_Model
   function getPetugas()
   {
     return $this->db->get_where('userapp', ['roles' => 3]);
+  }
+
+  // Untuk Ubah Password
+  function ubahPassword($id, $passwordBaru)
+  {
+    $data = ['password' => password_hash(($passwordBaru), PASSWORD_DEFAULT)];
+    $this->db->set($data);
+    $this->db->where(['id' => $id]);
+    $this->db->update('userapp');
   }
 }

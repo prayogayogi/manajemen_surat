@@ -7,6 +7,7 @@ class AuthController extends CI_Controller
   {
     parent::__construct();
     $this->load->library('form_validation');
+    $this->load->model(['authModel']);
   }
 
   // view untuk login
@@ -76,5 +77,42 @@ class AuthController extends CI_Controller
     </button>
   </div>');
     redirect('authController');
+  }
+
+
+  // Ubah Password
+  public function ubahPassword($id)
+  {
+    $passwordLama = $this->input->post('passwordLama');
+    $passwordBaru = $this->input->post('passwordBaru');
+    $userLogin = $this->db->get_where('userapp', ['id' => $id])->row_array();
+    if (password_verify($passwordLama, $userLogin['password'])) {
+      if ($passwordLama == $passwordBaru) {
+        $this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Password Baru Sama Dengan Password Lama.</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>');
+        redirect('DashboardController');
+      } else {
+        $this->authModel->ubahPassword($id, $passwordBaru);
+        $this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Password Anda Berhasil Di Ubah</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>');
+        redirect('DashboardController');
+      }
+    } else {
+      $this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Password Lama Anda Salah.</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>');
+      redirect('DashboardController');
+    }
   }
 }

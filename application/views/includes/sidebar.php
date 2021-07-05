@@ -45,7 +45,7 @@
             </p>
           </a>
         </li>
-        <li class="nav-item has-treeview menu-open">
+        <li class="nav-item has-treeview <?= (current_url() == base_url('Sirkulasi/SirkulasiController')) || (current_url() == base_url('Sirkulasi/SirkulasiController/dataMeninggal')) || (current_url() == base_url('Sirkulasi/SirkulasiController/dataPendatang')) || (current_url() == base_url('Sirkulasi/SirkulasiController/dataPindah'))  ? 'menu-open ' : '' ?> ">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-database"></i>
             <p>
@@ -55,25 +55,25 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="./index.html" class="nav-link">
+              <a href="<?= base_url('Sirkulasi/SirkulasiController') ?>" class="nav-link <?= (current_url() == base_url('Sirkulasi/SirkulasiController')) ? 'active' : '' ?>">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Data Lahir</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="./index2.html" class="nav-link">
+              <a href="<?= base_url('Sirkulasi/SirkulasiController/dataMeninggal') ?>" class="nav-link <?= (current_url() == base_url('Sirkulasi/SirkulasiController/dataMeninggal')) ? 'active' : '' ?>">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Data Meninggal</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="./index2.html" class="nav-link">
+              <a href="<?= base_url('Sirkulasi/SirkulasiController/dataPendatang') ?>" class="nav-link <?= (current_url() == base_url('Sirkulasi/SirkulasiController/dataPendatang')) ? 'active' : '' ?>">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Data Pendatang</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="./index2.html" class="nav-link">
+              <a href="<?= base_url('Sirkulasi/SirkulasiController/dataPindah') ?>" class="nav-link <?= (current_url() == base_url('Sirkulasi/SirkulasiController/dataPindah')) ? 'active' : '' ?>">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Data Pindah</p>
               </a>

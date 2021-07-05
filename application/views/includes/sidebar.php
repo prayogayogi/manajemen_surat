@@ -80,14 +80,52 @@
             </li>
           </ul>
         </li>
-        <li class="nav-header">Laporan</li>
-        <li class="nav-item">
+        <li class="nav-item has-treeview <?= (current_url() == base_url('Laporan/LaporanController')) || (current_url() == base_url('Laporan/LaporanController/dataKk')) || (current_url() == base_url('Laporan/LaporanController/dataLahir')) || (current_url() == base_url('Laporan/LaporanController/dataMeningal')) || (current_url() == base_url('Laporan/LaporanController/dataPendatang')) || (current_url() == base_url('Laporan/LaporanController/dataPindah')) ? 'menu-open' : '' ?>">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-book"></i>
             <p>
-              Laporan
+              Kelola Laporan
+              <i class="right fas fa-angle-left"></i>
             </p>
           </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="<?= base_url('Laporan/LaporanController') ?>" class="nav-link <?= (current_url() == base_url('Laporan/LaporanController')) ? 'active' : '' ?>">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Data Penduduk</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= base_url('Laporan/LaporanController/dataKk') ?>" class="nav-link <?= (current_url() == base_url('Laporan/LaporanController/dataKk')) ? 'active' : '' ?>">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Data Kartu Keluarga</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= base_url('Laporan/LaporanController/dataLahir') ?>" class="nav-link <?= (current_url() == base_url('Laporan/LaporanController/dataLahir')) ? 'active' : '' ?>">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Data Lahir</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= base_url('Laporan/LaporanController/dataMeningal') ?>" class="nav-link <?= (current_url() == base_url('Laporan/LaporanController/dataMeningal')) ? 'active' : '' ?>">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Data Meninggal</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= base_url('Laporan/LaporanController/dataPendatang') ?>" class="nav-link <?= (current_url() == base_url('Laporan/LaporanController/dataPendatang')) ? 'active' : '' ?>">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Data Pendatang</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= base_url('Laporan/LaporanController/dataPindah') ?>" class="nav-link <?= (current_url() == base_url('Laporan/LaporanController/dataPindah')) ? 'active' : '' ?>">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Data Pindah</p>
+              </a>
+            </li>
+          </ul>
         </li>
         <li class="nav-header">Administrator</li>
         <li class="nav-item">

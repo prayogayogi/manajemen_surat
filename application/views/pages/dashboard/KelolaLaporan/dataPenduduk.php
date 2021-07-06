@@ -40,19 +40,17 @@
                             <th>No</th>
                             <th>Nama</th>
                             <th>Alamat</th>
-                            <th>Nik</th>
-                            <th>Ekonomi</th>
+                            <th>Email</th>
                             <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <!-- <?php foreach ($penduduk as $data) : ?>
+                          <?php foreach ($getAdmin as $data) : ?>
                             <tr>
                               <td><?= $no++ ?></td>
                               <td><?= $data['nama']; ?></td>
                               <td><?= $data['alamat']; ?></td>
-                              <td><?= $data['no_nik']; ?></td>
-                              <td><?= $data['status']; ?></td>
+                              <td><?= $data['email']; ?></td>
                               <td>
                                 <a href="#" data-toggle="modal" data-target="#modalUbahDataPenduduk<?= $data['id'] ?>" class="btn btn-primary"><i class="fas fa-pen-square"></i></a>
 
@@ -61,7 +59,7 @@
                                 <a href="#" data-toggle="modal" data-target="#staticBackdrop<?= $data['id'] ?>" class="btn btn-info"><i class="fas fa-plus-square"></i></a>
                               </td>
                             </tr>
-                          <?php endforeach; ?> -->
+                          <?php endforeach; ?>
                         </tbody>
                       </table>
                     </div>
@@ -143,7 +141,7 @@
 </div> -->
 
 <!-- Modal Untuk ubah data penduduk -->
-<!-- <?php foreach ($penduduk as $data) : ?>
+<!-- <?php foreach ($getAdmin as $data) : ?>
   <div class="modal fade" id="modalUbahDataPenduduk<?= $data['id'] ?>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">

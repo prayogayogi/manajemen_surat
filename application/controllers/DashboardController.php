@@ -15,7 +15,9 @@ class DashboardController extends CI_Controller
       redirect('authController');
     }
     $data['title'] = 'Dashboard';
+    $data['no'] = 1;
     $data['userLogin'] = $this->authModel->getUserLogin()->row_array();
+    $data['penduduk'] = $this->pendudukModel->join()->result_array();
     $data['dataPenduduk'] = $this->pendudukModel->getDataPenduduk()->num_rows();
     $data['dataLakilaki'] = $this->pendudukModel->getDataLakilaki()->num_rows();
     $data['dataPerempuan'] = $this->pendudukModel->getDataPerempuan()->num_rows();

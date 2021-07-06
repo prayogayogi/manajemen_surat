@@ -10,7 +10,8 @@ class LaporanController extends CI_Controller
     $this->load->model(['pendudukModel', 'authModel', 'UserAppModel']);
   }
 
-  // Untuk laporan data Penduduk
+  // UNTUK LAPORAN DATA PENDUDUK
+  // untuk get data penduduk
   public function index()
   {
     $data['title'] = "Laporan Data Penduduk";
@@ -22,6 +23,14 @@ class LaporanController extends CI_Controller
     $this->load->view('pages/dashboard/KelolaLaporan/dataPenduduk', $data);
     $this->load->view('includes/footer');
   }
+
+  // untuk get data penduduk data database
+  public function getDataPenduduk()
+  {
+  }
+
+
+  // AKHIR LAPORAN DATA PENDUDUK
 
   // Untuk laporan Data Kartu Keluarga
   public function dataKk()

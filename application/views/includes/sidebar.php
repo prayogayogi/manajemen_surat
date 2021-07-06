@@ -201,11 +201,11 @@
               </div>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary">Save As</button>
-          <button type="resset" class="btn btn-dark ml-2" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Simpan</button>
+          <button type="resset" class="btn btn-dark px-4 ml-2" data-dismiss="modal">Close</button>
         </form>
       </div>
-
     </div>
   </div>
 </div>
+<!-- akhir modal ubah password -->

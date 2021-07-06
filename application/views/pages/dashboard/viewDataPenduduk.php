@@ -132,7 +132,7 @@
               </div>
               <button type="submit" class="btn btn-primary mt-2">Simpan</button>
 
-              <button type="resset" class="btn btn-dark px-3 ml-2 mt-2" data-dismiss="modal">Close</button>
+              <button type="resset" class="btn btn-dark px-4 ml-2 mt-2" data-dismiss="modal">Close</button>
 
             </form>
           </div>
@@ -192,7 +192,7 @@
                   </div>
                 </div>
                 <button type="submit" class="btn btn-primary mt-2">Simpan</button>
-                <button type="resset" class="btn px-3 ml-2 mt-2 btn-dark" data-dismiss="modal">Close</button>
+                <button type="resset" class="btn px-4 ml-2 mt-2 btn-dark" data-dismiss="modal">Close</button>
               </form>
             </div>
           </div>
@@ -242,7 +242,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn px-3 ml-2 btn-dark" data-dismiss="modal">Close</button>
+          <button type="button" class="btn px-4 mr-2 mt-2 btn-dark" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
